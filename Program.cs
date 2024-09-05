@@ -14,7 +14,8 @@ namespace StringDemo
             // the  main method is static, so everything it calls has to be static or instantiated 
             //AppendingStrings();
             //InterpolationAndLiteral();
-            WorkingWithArrays();
+            //WorkingWithArrays();
+            PadAndTrim();
         }
 
         private static void StringConversion()
@@ -115,6 +116,30 @@ namespace StringDemo
 
             Array.ForEach(resultsArray, x => Console.WriteLine(x));
         }
+        //trim
+        private static void PadAndTrim()
+        {
+            string testString = "     Hello World     ";
+            string results;
+
+            results = testString.TrimStart();
+            Console.WriteLine($"'{results}'");
+
+            results = testString.TrimEnd();
+            Console.WriteLine($"'{results}'");
+
+            results = testString.Trim();
+            Console.WriteLine($"'{results}'");
+
+            testString = "1.15";
+
+            results = testString.PadLeft(10, '0');
+            Console.WriteLine(results);
+
+            results = testString.PadRight(10, '0');
+            Console.WriteLine(results);
+        }
+
 
     }
 }
