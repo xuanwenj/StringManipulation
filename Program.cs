@@ -12,8 +12,9 @@ namespace StringDemo
             //StringAsArray();
             //EscapeString();
             // the  main method is static, so everything it calls has to be static or instantiated 
-            AppendingStrings();
-            InterpolationAndLiteral();
+            //AppendingStrings();
+            //InterpolationAndLiteral();
+            WorkingWithArrays();
         }
 
         private static void StringConversion()
@@ -88,5 +89,32 @@ namespace StringDemo
 
             Console.WriteLine(results);
         }
+
+        private static void WorkingWithArrays()
+        {
+            int[] ages = new int[] { 6, 7, 8, 3, 5 };
+            string results;
+
+            results = String.Concat(ages);
+            Console.WriteLine(results);
+
+            results = String.Join(",", ages);
+            Console.WriteLine(results);
+
+            Console.WriteLine();
+
+            string testString = "Jon,Tim,Mary,Sue,Bob,Jane";
+            string[] resultsArray = testString.Split(',');
+
+            Array.ForEach(resultsArray, x => Console.WriteLine(x));
+
+            Console.WriteLine();
+
+            testString = "Jon, Tim, Mary, Sue, Bob, Jane";
+            resultsArray = testString.Split(", ");
+
+            Array.ForEach(resultsArray, x => Console.WriteLine(x));
+        }
+
     }
 }
