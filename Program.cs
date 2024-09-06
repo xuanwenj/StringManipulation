@@ -139,7 +139,36 @@ namespace StringDemo
             results = testString.PadRight(10, '0');
             Console.WriteLine(results);
         }
+        //search string
+        private static void SearchingStrings()
+        {
+            string testString = "This is a test of the search. Let's see how its testing works out.";
+            bool resultsBoolean;
+            int resultsInt;
 
+            resultsBoolean = testString.StartsWith("This is");
+            Console.WriteLine($"Starts with \"This is\": {resultsBoolean}");
+
+            resultsBoolean = testString.StartsWith("This is");
+            Console.WriteLine($"Starts with \"This is\": {resultsBoolean}");
+
+            resultsBoolean = testString.EndsWith("works out.");
+            Console.WriteLine($"Ends with \"works out.\": {resultsBoolean}");
+
+            resultsBoolean = testString.EndsWith("work out.");
+            Console.WriteLine($"Ends with \"work out.\": {resultsBoolean}");
+
+            resultsBoolean = testString.Contains("test");
+            Console.WriteLine($"Contains \"test\": {resultsBoolean}");
+
+            resultsBoolean = testString.Contains("tests");
+            Console.WriteLine($"Contains \"tests\": {resultsBoolean}");
+
+            resultsInt = testString.IndexOf("test");
+            Console.WriteLine($"Index of \"test\": {resultsInt}");
+
+
+        }
 
     }
 }
