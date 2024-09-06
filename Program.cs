@@ -15,7 +15,9 @@ namespace StringDemo
             //AppendingStrings();
             //InterpolationAndLiteral();
             //WorkingWithArrays();
-            PadAndTrim();
+            //PadAndTrim();
+            SearchingStrings();
+
         }
 
         private static void StringConversion()
@@ -166,6 +168,24 @@ namespace StringDemo
 
             resultsInt = testString.IndexOf("test");
             Console.WriteLine($"Index of \"test\": {resultsInt}");
+
+
+            // start searching the first 'test' from position of 11, including 11
+            resultsInt = testString.IndexOf("test", 11);
+            Console.WriteLine($"Index of \"test\" after character 10: {resultsInt}");
+
+            resultsInt = testString.IndexOf("test", 48);
+            Console.WriteLine($"Index of \"test\" after character 48: {resultsInt}");
+
+            // searches for the last occurrence of test from the beginning
+            resultsInt = testString.LastIndexOf("test");
+            Console.WriteLine($"Last Index of \"test\": {resultsInt}");
+            // searches for the last occurrence of "test", starts searching backward from index 48.
+            resultsInt = testString.LastIndexOf("test", 48);
+            Console.WriteLine($"Last Index of \"test\" before character 48: {resultsInt}");
+
+            resultsInt = testString.LastIndexOf("test", 10);
+            Console.WriteLine($"Last Index of \"test\" before character 10: {resultsInt}");
 
 
         }
