@@ -16,7 +16,9 @@ namespace StringDemo
             //InterpolationAndLiteral();
             //WorkingWithArrays();
             //PadAndTrim();
-            SearchingStrings();
+            //SearchingStrings();
+            OrderingStrings();
+
 
         }
 
@@ -189,6 +191,63 @@ namespace StringDemo
 
 
         }
+        private static void OrderingStrings()
+        {
+            CompareToHelper("Mary", "Bob");
+            CompareToHelper("Mary", null);
+            CompareToHelper("Adam", "Bob");
+            CompareToHelper("Bob", "Bob");
+
+
+            CompareHelper("Mary", "Bob");
+            CompareHelper("Mary", null);
+            CompareHelper(null, "Bob");
+            CompareHelper("Adam", "Bob");
+            CompareHelper("Bob", "Bob");
+            CompareHelper("Bob", "Bobby");
+            CompareHelper(null, null);
+
+        }
+        //the drawback of this method is testA can not be null, because it is needed in
+        //int resultsInt = testA.CompareTo(testB);
+
+
+        private static void CompareToHelper(string testA, string? testB)
+        {
+            int resultsInt = testA.CompareTo(testB);
+            switch (resultsInt)
+            {
+                case > 0:
+                    Console.WriteLine($"CompareTo: {testB ?? "null"} comes before {testA}");
+                    break;
+                case < 0:
+                    Console.WriteLine($"CompareTo: {testA} comes before {testB}");
+                    break;
+                case 0:
+                    Console.WriteLine($"CompareTo: {testA} is the same as {testB}");
+                    break;
+            }
+        }
+
+        private static void CompareHelper(string? testA, string? testB)
+        {
+            int resultsInt = String.Compare(testA, testB);
+
+            switch (resultsInt)
+            {
+                case > 0:
+                    Console.WriteLine($"Compare: {testB ?? "null"} comes before {testA}");
+                    break;
+                case < 0:
+                    Console.WriteLine($"Compare: {testA ?? "null"} comes before {testB}");
+                    break;
+                case 0:
+                    Console.WriteLine($"Compare: {testA ?? "null"} is the same as {testB ?? "null"}");
+                    break;
+            }
+        }
+
+
 
     }
 }
