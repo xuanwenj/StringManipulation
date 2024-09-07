@@ -258,7 +258,8 @@ namespace StringDemo
         private static void EqualityHelper(string? testA, string? testB)
         {
             bool resultsBoolean;
-
+            // .Equals performs a content-based comparison,
+            // it checks if the actual content of the strings is the same.
             resultsBoolean = String.Equals(testA, testB);
             if (resultsBoolean)
             {
@@ -268,7 +269,25 @@ namespace StringDemo
             {
                 Console.WriteLine($"Equals: '{testA ?? "null"}' does not equal '{testB ?? "null"}'");
             }
+
+            // function the same out of the gate
+            // == performs a reference equality check
+
+            resultsBoolean = testA == testB;
+            if (resultsBoolean)
+            {
+                Console.WriteLine($"==: '{testA ?? "null"}' equals '{testB ?? "null"}'");
+            }
+            else
+            {
+                Console.WriteLine($"==: '{testA ?? "null"}' does not equal '{testB ?? "null"}'");
+            }
+
+            Console.WriteLine();
+
         }
+
+
 
 
 
