@@ -17,8 +17,8 @@ namespace StringDemo
             //WorkingWithArrays();
             //PadAndTrim();
             //SearchingStrings();
-            OrderingStrings();
-
+            //OrderingStrings();
+            TestingEquality();
 
         }
 
@@ -244,6 +244,29 @@ namespace StringDemo
                 case 0:
                     Console.WriteLine($"Compare: {testA ?? "null"} is the same as {testB ?? "null"}");
                     break;
+            }
+        }
+
+        private static void TestingEquality()
+        {
+            EqualityHelper("Bob", "Mary");
+            EqualityHelper(null, "");
+            EqualityHelper("", "");
+            EqualityHelper("Bob", "bob");
+        }
+
+        private static void EqualityHelper(string? testA, string? testB)
+        {
+            bool resultsBoolean;
+
+            resultsBoolean = String.Equals(testA, testB);
+            if (resultsBoolean)
+            {
+                Console.WriteLine($"Equals: '{testA ?? "null"}' equals '{testB ?? "null"}'");
+            }
+            else
+            {
+                Console.WriteLine($"Equals: '{testA ?? "null"}' does not equal '{testB ?? "null"}'");
             }
         }
 
